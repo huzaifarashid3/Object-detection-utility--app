@@ -1,0 +1,10 @@
+
+{% extends "finezy/layout.html" %}
+{% block body %}
+    <h1>Object Detection</h1>
+    <form method='post' enctype="multipart/form-data" action="{% url 'finezy:results' %}">
+        {% csrf_token %}
+        <input type="file" accept="image" name='image_data' required>
+        <button type="submit">Detect Objects</button>
+    </form>
+{% endblock body %}
